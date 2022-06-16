@@ -10,12 +10,12 @@
   },
   "jest": {
     "setupFiles": [
-      "./tools/testFiles/testSetup.js"
+      "./tools/testSetup.js"
     ],
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/testFiles/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/tools/testFiles/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/tools/styleMock.js"
     }
   },
   "dependencies": {
