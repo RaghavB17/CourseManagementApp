@@ -19,14 +19,14 @@ export function deleteCourseSuccess(course) {
 }
 
 export function loadCourses() {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch(beginApiCall());
     return courseApi
       .getCourses()
-      .then(courses => {
+      .then((courses) => {
         dispatch(loadCourseSuccess(courses));
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch(apiCallError(error));
         throw error;
       });
@@ -35,16 +35,16 @@ export function loadCourses() {
 
 export function saveCourse(course) {
   //eslint-disable-next-line no-unused-vars
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     dispatch(beginApiCall());
     return courseApi
       .saveCourse(course)
-      .then(savedCourse => {
+      .then((savedCourse) => {
         course.id
           ? dispatch(updateCourseSuccess(savedCourse))
           : dispatch(createCourseSuccess(savedCourse));
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch(apiCallError(error));
         throw error;
       });
@@ -56,8 +56,8 @@ export function deleteCourse(course) {
     dispatch(beginApiCall());
     return courseApi
       .deleteCourse(course.id)
-      .then((courses) => {
-        dispatch(deleteCourseSuccess(courses));
+      .then((deletedCourse) => {
+        dispatch(deleteCourseSuccess(deletedCourse));
       })
       .catch((error) => {
         dispatch(apiCallError(error));
